@@ -1,0 +1,72 @@
+<!doctype html>
+<hr>
+<head>
+    <meta charset="gb2312">
+    <title>骆剑个人博客</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="connect/view/css/base.css" rel="stylesheet">
+    <link href="connect/view/css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="connect/view/js/modernizr.js"></script>
+    <![endif]-->
+</head>
+<hr>
+<header>
+    <div class="logo"><a href="/"><img src="connect/view/images/logo.jpg"></a></div>
+    <div class="menu">
+        <ul>
+            <li><a href="index.php">首页</a></li>
+            <li><a href="/">关于我</a></li>
+            <li><a href="/">慢生活</a></li>
+            <li><a href="/">碎言碎语</a></li>
+            <li><a href="/">模板分享</a></li>
+            <li><a href="/">学无止境</a></li>
+            <li><a href="/">留言板</a></li>
+        </ul>
+    </div>
+</header>
+<div class="about">
+    <h2><?php echo $row['title'];?></h2>
+    <ul>
+       <?php  echo $row['content'] ; ?>
+
+    </ul>
+    <h2>About my blog</h2>
+    <p>域  名：127.0.0.1/Two_study/log 创建于<?php echo date('Y年m月d日 H时i分s秒', $row['postdate'])?> <a href="http://www.net.cn/domain/" class="blog_link" target="_blank">注册域名</a><a class="blog_link" href="http://koubei.baidu.com/womc/s/www.yangqq.com" target="_blank">邀你点评</a></p>
+    <p>服务器：阿里云服务器<a href="http://s.click.taobao.com/t?e=m%3D2%26s%3Dz5eBi6WTFMQcQipKwQzePCperVdZeJviEViQ0P1Vf2kguMN8XjClAlNMWqr0PJv0%2BzfprQ6FycnevVLneSIAilqVHLpX3RfWM7YdOqxZsyNXcE%2BniVLVjudn1BbglxZYxUhy8exlzcq9AmARIwX9K%2BnbtOD3UdznPV1H2z0iQv9NkKVMHClW0QbMqOpFMIvnvjQXzzpXdTHGJe8N%2FwNpGw%3D%3D" target="_blank" class="blog_link" >购买空间</a><a href="/jstt/web/2014-01-18/644.html" target="_blank" class="blog_link" >参考我的空间配置</a></p>
+    <p>程  序：PHP 帝国CMS7.0</p>
+</div>
+<p>自由评论</p>
+<form action="index.php?action=add&actid=<?php  echo $row['ID'] ; ?>"   method="post">
+    <p>姓名：<input type="text" name="name"></p>
+    <p>时间：<input type="text" name="time"></p>
+    评论:
+   &nbsp;&nbsp;<textarea name="content" ></textarea>
+    <input type="submit" name="submit">
+
+</form>
+<hr> </hr>
+<?php  foreach ($com_list as $v){  ?>
+<p>姓名：<?php echo $v['name'] ?></p>
+<p>评论:<?php echo $v['coment'] ?></p>
+<p>评论时间：<?php echo date('Y-m-d H:i:s' , $v['postdate'])?></p>
+<hr> </hr>
+<?php } ?>
+<div class="about_c">
+    <p>网名：<span>DanceSmile</span> | 即步非烟</p>
+    <p>姓名：杨青 </p>
+    <p>籍贯：四川省—成都市</p>
+    <p>现居：天津市—滨海新区</p>
+    <p>职业：网站设计、网站制作</p>
+    <p>喜欢的书：《红与黑》《红楼梦》</p>
+    <p>喜欢的音乐：《burning》《just one last dance》《相思引》</p>
+    <p><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=HHh9cn95b3F1cHVye1xtbTJ-c3E"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_22.png" alt="杨青个人博客网站"></a></p>
+    <p>
+        <!--以下是QQ邮件列表订阅嵌入代码--><a target="_blank" href="http://list.qq.com/cgi-bin/qf_invite?id=65fb9b3618916f162973471ebc5b97ff786efae0ec9a863e"><img border="0" alt="填写您的邮件地址，订阅我们的精彩内容：" src="http://rescdn.list.qq.com/zh_CN/htmledition/images/qunfa/manage/picMode_light_m.png"></a> </p>
+</div>
+<footer>
+    <p>Design by DanceSmile <a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备11002373号-1</a></p>
+</footer>
+</body>
+</html>
